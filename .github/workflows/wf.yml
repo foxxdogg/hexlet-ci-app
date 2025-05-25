@@ -3,10 +3,11 @@ name: wf
 on: push
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
       - run: install build
+      - run: npm start
       - run: npm test
       - run: npx eslint .
