@@ -6,6 +6,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - run: make setup
-      - run: make test
-      - run: make lint
+      - uses: actions/setup-node@v4
+      - run: install build
+      - run: npm test
+      - run: npx eslint .
